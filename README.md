@@ -69,6 +69,22 @@ cd /etc/apache2/sites-available
 ```bash
 vi laravel.conf
 ```
+```bash
+<VirtualHost *:80>
+    ServerName domainname.com
+
+    DocumentRoot /var/www/html/<your_project_name_here>/public
+
+    <Directory /var/www/html/<your_project_name_here>>
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/my_project_error.log
+    CustomLog ${APACHE_LOG_DIR}/my_project_access.log combined
+</VirtualHost>
+```
 ## To enable and Disable
 ```bash
 a2dissite 000-default.conf

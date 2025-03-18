@@ -97,3 +97,8 @@ a2ensite laravel.conf
 ```bash
 service apache2 restart
 ```
+
+## if not working file not found
+```bash
+a2enmod rewrite
+```
